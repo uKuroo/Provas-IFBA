@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define TAM 7
+#define TAM 10
 int main()
 {
     int sala[TAM], icount, max = 0, vidas = 0, entrada, saida, entradafinal, saidafinal;
