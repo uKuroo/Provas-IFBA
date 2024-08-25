@@ -27,7 +27,7 @@ int main()
     if(ordem > 0){
         printf("Palavra desordenada.");
     }else{
-        printf("Palavra ordenada.");
+        printf("Palavra esta ordenada.");
     }
 
     return 0;
