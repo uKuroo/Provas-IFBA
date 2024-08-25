@@ -16,8 +16,8 @@ programa deveria ser: "a:a d:e i:i m:o r:r".*/
 #define string 50
 
 int main(){
-    char frase[string],ordem[string], aux;
-    int icount, jcount;
+    char frase[string],ordem[string], faixa[4],aux;
+    int icount, jcount,primeiro,ultimo,tam=0;
     
     printf("Insira uma frase com apenas letras minusculas e espacos\n");
     fgets(frase,50,stdin);
@@ -34,12 +34,25 @@ int main(){
     for(icount=0,jcount=0;frase[icount] != '\n';icount++){
         if(frase[icount] > ' '){
             ordem[jcount] = frase[icount];
-            jcount++;
+            jcount++;tam++;
         }
     }
 
-    puts(frase);
-    puts(ordem);
+    for(icount = 0; icount < tam;icount++){
+        if(ordem[icount +1] <= ordem[icount]+1 && icount < tam){
+            primeiro=ordem[icount];
+        while(ordem[icount +1] <= ordem[icount]+1)
+            icount++;
+            ultimo = ordem[icount];
+            faixa[0] = primeiro; faixa[1] = ':'; faixa[2] = ultimo; faixa[3] = ' ';
+            puts(faixa);
+        }else{
+            primeiro = ordem[icount];
+            if(icount >= tam) ultimo = ordem[icount - 1];
+            faixa[0] = primeiro; faixa[1] = ':'; faixa[2] = ultimo; faixa[3] = ' ';
+            puts(faixa);
+        }
+    }
 
     return 0;
 }
