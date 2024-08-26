@@ -48,7 +48,6 @@ int main(){
             puts(faixa);
         }else{
             primeiro = ordem[icount];
-            if(icount >= tam) ultimo = ordem[icount - 1];
             faixa[0] = primeiro; faixa[1] = ':'; faixa[2] = ultimo; faixa[3] = ' ';
             puts(faixa);
         }
