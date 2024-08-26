@@ -31,15 +31,15 @@ int main(){
             }
         }
     }
-    for(icount=0,jcount=0;frase[icount] != '\n';icount++){
-        if(frase[icount] > ' '){
+    for(icount=0,jcount=0;frase[icount] != '\0';icount++){
+        if(frase[icount] >= 'a' && frase[icount] <= 'z'){
             ordem[jcount] = frase[icount];
             jcount++;tam++;
         }
     }
 
     for(icount = 0; icount < tam;icount++){
-        if(ordem[icount +1] <= ordem[icount]+1 && icount < tam){
+        if(ordem[icount +1] <= ordem[icount]+1 && icount < tam - 1){
             primeiro=ordem[icount];
         while(ordem[icount +1] <= ordem[icount]+1)
             icount++;
@@ -47,7 +47,7 @@ int main(){
             faixa[0] = primeiro; faixa[1] = ':'; faixa[2] = ultimo; faixa[3] = ' ';
             puts(faixa);
         }else{
-            primeiro = ordem[icount];
+            primeiro = ordem[icount]; ultimo = primeiro;
             faixa[0] = primeiro; faixa[1] = ':'; faixa[2] = ultimo; faixa[3] = ' ';
             puts(faixa);
         }
