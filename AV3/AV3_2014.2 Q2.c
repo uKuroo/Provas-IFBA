@@ -9,7 +9,7 @@ valor 3.*/
 
 int main(){
     char string[TAM], naoconsoantes[11] = {"aeiouAEIOU "};
-    int icount,jcount, consoante = 0, casos = 0;
+    int icount, jcount, consoante = 0, casos = 0;
 
     printf("Insira a String\n");
 
