@@ -9,22 +9,22 @@ valor 3.*/
 
 int main(){
     char string[TAM], naoconsoantes[11] = {"aeiouAEIOU "};
-    int icount,jcount, encontro = 0, casos = 0;
+    int icount,jcount, consoante = 0, casos = 0;
 
     printf("Insira a String\n");
 
     fgets(string,TAM,stdin);
 
-    for(icount = 0;string[icount + 1] != '\n' && string[icount + 1] != '\0';icount++){
-        encontro = 1;
+    for(icount = 0;string[icount] != '\n';icount++){
+        consoante += 1;
         for(jcount = 0; jcount < 11;jcount++)
-            if(string[icount] == naoconsoantes[jcount] || string[icount + 1] == naoconsoantes[jcount])
-                encontro = 0;
-            if(string[icount+2] != naoconsoantes)
-                icount++;
-        casos+=encontro;
+            if(string[icount] == naoconsoantes[jcount])
+                consoante = 0;
+        if(consoante == 2){
+        casos++;
+        }
     }
         printf("Casos: %d",casos);
-    //stm Str Br
+    
     return 0;
 }
