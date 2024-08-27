@@ -20,6 +20,8 @@ int main(){
         for(jcount = 0; jcount < 11;jcount++)
             if(string[icount] == naoconsoantes[jcount] || string[icount + 1] == naoconsoantes[jcount])
                 encontro = 0;
+            if(string[icount+2] != naoconsoantes)
+                icount++;
         casos+=encontro;
     }
         printf("Casos: %d",casos);
